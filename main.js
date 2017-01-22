@@ -34,7 +34,7 @@ $('.datepicker-div').datepicker({
 
 function getSuggestions(query, process) {
     console.log(encodeURIComponent(query));
-    $.get('http://laguna.joseb.me/autosuggest', {"q":encodeURIComponent(query)}, function(data, status) {
+    $.get('http://laguna.joseb.me/autosuggest?q=' + encodeURIComponent(query), {}, function(data, status) {
         process(data);
     });
 }

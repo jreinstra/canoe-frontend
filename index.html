@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Canoe</title>
+    <title>Laguna</title>
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
@@ -22,70 +22,119 @@
     <!-- Typeahead -->
     <script src="bootstrap3-typeahead.min.js"></script>
 </head>
-<body class="container">
-    <h1 class="text-right">LAGUNA</h1>
-    <div id="search" class="row text-center">
-        <h2>Search for Flights</h2>
-        <br><br>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-            <div class="input-group row text-left">
-                <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-from-code" placeholder="From (Airport)" data-provide="typeahead" autocomplete="off" data-source="['SFO', 'SLC', 'hello', 'OAK', 'OAR']" style="border-radius:0;"/>
+<body>
+    <div class="background-image"></div>
+    <div class="content container">
+        <h1 id="title" class="text-right">L A G U N A</h1>
+        <div id="search" class="row text-center">
+            <h2>Search for Flights</h2>
+            <br><br>
+            <div class="col-sm-3"></div>
+            <div id="formContainer" class="col-sm-6">
+                <div class="input-group row text-left">
+                    <div class="col-sm-6">
+                        <input type="text" class="input-lg form-control" id="search-from-code" placeholder="From (Airport)" data-provide="typeahead" autocomplete="off" data-source="['SFO', 'SLC', 'hello', 'OAK', 'OAR']" style="border-radius:0;"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="input-lg form-control" id="search-to-code" placeholder="To (Airport)" data-provide="typeahead" autocomplete="off" style="border-radius:0;"/>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <select class="form-control input-lg" id="search-travel-mode">
+                            <option value="r">Round-Trip</option>
+                            <option value="o">One-Way</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3"></div>
                 </div>
-                <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-to-code" placeholder="To (Airport)" data-provide="typeahead" autocomplete="off" style="border-radius:0;"/>
-                </div>
-            </div><br>
-            <div class="form-group row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <select class="form-control input-lg" id="search-travel-mode">
-                        <option value="r">Round-Trip</option>
-                        <option value="o">One-Way</option>
-                    </select>
-                </div>
-                <div class="col-sm-3"></div>
-            </div>
-            <div id="roundTripOptions" class="input-daterange input-group row datepicker-div">
-                <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-start-date" placeholder="Start Date"/>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-end-date" placeholder="End Date"/>
-                </div>
-            </div>
-            <div id="onewayTripOptions" class="row" style="display:none;">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div class="input-group date datepicker-div">
-                            <span class="input-group-addon" style="display:none;"></span><input type="text" class="input-lg form-control" id="search-trip-date" placeholder="Trip Date"/><span class="input-group-addon" style="display:none;"></span>
+                <div id="roundTripOptions" class="input-daterange input-group row datepicker-div">
+                    <div class="col-sm-6">
+                        <input type="text" class="input-lg form-control" id="search-start-date" placeholder="Start Date"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="input-lg form-control" id="search-end-date" placeholder="End Date"/>
                     </div>
                 </div>
-                <div class="col-sm-3"></div>
+                <div id="onewayTripOptions" class="row" style="display:none;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="input-group date datepicker-div">
+                                <span class="input-group-addon" style="display:none;"></span><input type="text" class="input-lg form-control" id="search-trip-date" placeholder="Trip Date"/><span class="input-group-addon" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <br><br>
+                <button id="searchButton" class="btn btn-primary btn-lg">Search</button>
             </div>
-            <br><br>
-            <button id="searchButton" class="btn btn-primary btn-lg">Search</button>
+            <div class="col-sm-3"></div>
         </div>
-        <div class="col-sm-3"></div>
-    </div>
-    <div id="results" class="row panel-group" style="display:none;">
-        <h2 class="text-center">Search Results</h2>
-        <button id="backToSearch" class="btn btn-warning">Back to Search</button><br><br>
-        <div class="panel panel-default" x-url="http://www.apple.com/">
-            <div class="panel-body">
-                <span class="price">$550</span><br>
+        <div id="results" class="row panel-group" style="display:none;">
+            <h2 class="text-center">Search Results</h2>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <button id="backToSearch" class="btn btn-default">Back to Search</button><br><br>
+                <div class="panel panel-default" x-url="http://www.apple.com/">
+                    <div class="panel-body">
+                        <span class="price">$550</span>
+                        <ul>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">SFO - LAX</span>
+                                <span class="text-muted">3:55pm - 7:20pm</span>
+                                <span class="text-primary">3h 25m</span>
+                            </li>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">LAX - JFK</span>
+                                <span class="text-muted">8:30pm - 3:45am</span>
+                                <span class="text-primary">7h 15m</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default" x-url="http://www.apple.com/">
+                    <div class="panel-body">
+                        <span class="price">$675</span>
+                        <ul>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">SFO - LAX</span>
+                                <span class="text-muted">3:55pm - 7:20pm</span>
+                                <span class="text-primary">3h 25m</span>
+                            </li>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">LAX - JFK</span>
+                                <span class="text-muted">8:30pm - 3:45am</span>
+                                <span class="text-primary">7h 15m</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default" x-url="http://www.apple.com/">
+                    <div class="panel-body">
+                        <span class="price">$720</span>
+                        <ul>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">SFO - LAX</span>
+                                <span class="text-muted">3:55pm - 7:20pm</span>
+                                <span class="text-primary">3h 25m</span>
+                            </li>
+                            <li class="flight">
+                                <img src="http://i.forbesimg.com/media/lists/companies/delta-air-lines_416x416.jpg">
+                                <span class="text-warning">LAX - JFK</span>
+                                <span class="text-muted">8:30pm - 3:45am</span>
+                                <span class="text-primary">7h 15m</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="panel panel-default" x-url="http://www.apple.com/">
-            <div class="panel-body">
-                <span class="price">$675</span><br>
-            </div>
-        </div>
-        <div class="panel panel-default" x-url="http://www.apple.com/">
-            <div class="panel-body">
-                <span class="price">$720</span><br>
-            </div>
+            <div class="col-sm-2"></div>
         </div>
     </div>
     <script src="main.js"></script>
