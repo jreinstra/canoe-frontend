@@ -33,12 +33,12 @@ $('.datepicker-div').datepicker({
 //var pusher = new Pusher('b4782df8ff81aa3fbd62', {encrypted:true});
 
 function getSuggestions(query, process) {
-    $.get('http://laguna.joseb.me/autosuggest', {"q":query}, function(data, status) {
+    console.log(encodeURIComponent(query));
+    $.get('http://laguna.joseb.me/autosuggest', {"q":encodeURIComponent(query)}, function(data, status) {
         process(data);
     });
-    //process(["SFO", "SLC", "OAK", "OAR"]);
 }
 
 
 $("#search-from-code").typeahead({source:getSuggestions});
-$("#search-to-code").typeahead({source:["SFO", "SLC", "OAK", "OAR"]});
+$("#search-to-code").typeahead({source:getSuggestions});

@@ -31,10 +31,10 @@
         <div class="col-sm-6">
             <div class="input-group row text-left">
                 <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-from-code" placeholder="From (Airport)" data-provide="typeahead" autocomplete="off" data-source="['SFO', 'SLC', 'hello', 'OAK', 'OAR']"/>
+                    <input type="text" class="input-lg form-control" id="search-from-code" placeholder="From (Airport)" data-provide="typeahead" autocomplete="off" data-source="['SFO', 'SLC', 'hello', 'OAK', 'OAR']" style="border-radius:0;"/>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" class="input-lg form-control" id="search-to-code" placeholder="To (Airport)" data-provide="typeahead" autocomplete="off"/>
+                    <input type="text" class="input-lg form-control" id="search-to-code" placeholder="To (Airport)" data-provide="typeahead" autocomplete="off" style="border-radius:0;"/>
                 </div>
             </div><br>
             <div class="form-group row">
@@ -55,8 +55,14 @@
                     <input type="text" class="input-lg form-control" id="search-end-date" placeholder="End Date"/>
                 </div>
             </div>
-            <div id="onewayTripOptions" class="input-group date row datepicker-div" style="display:none;">
-                    <span class="input-group-addon" style="display:none;"></span><input type="text" class="input-lg form-control" id="search-trip-date" placeholder="Trip Date" style="left: 15px; width: calc(100% - 15px);"/><span class="input-group-addon" style="display:none;"></span>
+            <div id="onewayTripOptions" class="row" style="display:none;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div class="input-group date datepicker-div">
+                            <span class="input-group-addon" style="display:none;"></span><input type="text" class="input-lg form-control" id="search-trip-date" placeholder="Trip Date"/><span class="input-group-addon" style="display:none;"></span>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
             </div>
             <br><br>
             <button id="searchButton" class="btn btn-primary btn-lg">Search</button>
