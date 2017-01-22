@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canoe</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.min.css" />
+    
+    <!-- Datepicker style -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    
+    <!-- Datepicker script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <!-- Pusher Client -->
+    <script src="//js.pusher.com/4.0/pusher.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+    <h1 class="text-right">LAGUNA</h1>
+    <div id="search" class="row text-center">
+        <h2>Search for Flights</h2>
+        <br><br>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="input-group row text-left" style="width:100%;">
+                <div class="col-sm-6">
+                    <input type="text" class="input-lg form-control" id="search-from-code" placeholder="From (Airport)"/>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="input-lg form-control" id="search-to-code" placeholder="To (Airport)"/>
+                </div>
+            </div><br>
+            <div class="input-daterange input-group row" id="datepicker">
+                <div class="col-sm-6">
+                    <input type="text" class="input-lg form-control" id="search-start-date" placeholder="Start Date"/>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="input-lg form-control" id="search-end-date" placeholder="End Date"/>
+                </div>
+            </div>
+            <br><br>
+            <button id="searchButton" class="btn btn-primary btn-lg">Search</button>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div id="results" class="row panel-group" style="display:none;">
+        <h2 class="text-center">Search Results</h2>
+        <button id="backToSearch" class="btn btn-warning">Back to Search</button><br><br>
+        <div class="panel panel-default" x-url="http://www.apple.com/">
+            <div class="panel-body">
+                <span class="price">$550</span><br>
+            </div>
+        </div>
+        <div class="panel panel-default" x-url="http://www.apple.com/">
+            <div class="panel-body">
+                <span class="price">$675</span><br>
+            </div>
+        </div>
+        <div class="panel panel-default" x-url="http://www.apple.com/">
+            <div class="panel-body">
+                <span class="price">$720</span><br>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
